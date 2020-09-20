@@ -1,0 +1,75 @@
+<html>
+      <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link href="https://fonts.googleapis.com/css?family=Ek+Mukta" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+          <script>
+              function generate_field()
+              {
+                  document.getElementById("replace1").innerHTML='<br/><label for="land_lord_name"><span class="number">8</span> घर मालकाचे नाव:</label><input type="text" id="land_lord_name" name="land_lord_name" placeholder="घर मालकाचे नाव" required>';
+
+              }
+              function generate_field1()
+              {
+                  document.getElementById("replace1").innerHTML="";
+              }
+              function select1()
+              {
+                  generate_field();
+                  document.getElementById("address_type").checked= true;
+              }
+              function select2()
+              {
+                  generate_field1();
+                  document.getElementById("address_type1").checked= true;
+              }
+          </script>
+    </head>
+    <body>
+
+      <form action="make_entry.php" method="post">
+      
+        <h1>स्वप्निल कदम</h1>
+        
+        <fieldset>
+          <label for="sur_name"><span class="number">1</span> आडनाव :</label>
+          <input type="text" id="user_sur_name" name="user_sur_name" placeholder="तुमचे आडनाव" required>
+            
+          <label for="name"><span class="number">2</span> पहिले नाव:</label>
+          <input type="text" id="user_first_name" name="user_first_name" placeholder="तुमचे नाव" required>
+            
+            <label for="name"><span class="number">3</span> मधले नाव:</label>
+          <input type="text" id="user_middle_name" name="user_middle_name" placeholder="वडील/पती चे नाव">
+            
+            <label for="voter_id"><span class="number">4</span> मतदाता क्रमांक:</label>
+          <input type="text" id="voter_id" name="voter_id" placeholder="मतदाता क्रमांक" required>
+            
+          <label for="mobile_no"><span class="number">5</span> मोबाईल नंबर:</label>
+          <input type="text" maxlength="10" id="mobile_no" name="mobile_no" placeholder="मोबाईल नंबर" required>
+          
+          <label for="address" placeholder="मोबाईल नंबर"><span class="number">6</span> घर क्र./ नाव </label> 
+          <input type="text"  id="address" name="address" placeholder="घर क्र./ नाव "  required>
+         
+          <label for="address" placeholder="मोबाईल नंबर"><span class="number">7</span> कॉलनी</label> 
+          <input type="text"   id="address_1" name="address_1" placeholder="कॉलनी चे नाव"  required>
+  
+          <label for="address" placeholder="मोबाईल नंबर"><span class="number">7</span> एरिया/ नगर </label> 
+          <input type="text"   placeholder="एरिया/ नगर " id="address_2" name="address_2" required>
+          
+           
+
+            <div><span class="number">8</span> </div><br/>
+          <input type="radio" id="address_type" value="भाडेकरु" name="address_type" onclick="generate_field()"><label for="under_13" class="light" onclick="select1()">भाडेकरु</label><br>
+          <input type="radio" id="address_type1" value="घर मालक" name="address_type" onclick="generate_field1()"><label for="over_13" class="light" onclick="select2()">घर मालक</label>
+            
+            <div id="replace1"></div>
+        </fieldset>
+
+        <button type="submit">जतन करा</button>
+      </form>
+      
+    </body>
+</html>
